@@ -1,28 +1,28 @@
 name: Build JARVIS APK
 
 on:
-workflow_dispatch:
-push:
-branches: [main]
+  workflow_dispatch:
+  push:
+    branches: [main]
 
 permissions:
-contents: read
+  contents: read
 
 jobs:
-build:
-runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-steps:
-  - name: Checkout repository
-    uses: actions/checkout@v4
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-  - name: Set up JDK
-    uses: actions/setup-java@v4
-    with:
-      distribution: temurin
-      java-version: '17'
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
 
-  - name: Check project files
-    run: |
-      echo "JARVIS repository checked."
-      find . -maxdepth 3 -type f
+      - name: Check project files
+        run: |
+          echo "JARVIS repository checked."
+          find . -maxdepth 3 -type f
